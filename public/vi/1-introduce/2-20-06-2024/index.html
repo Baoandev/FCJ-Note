@@ -1,0 +1,1784 @@
+<!DOCTYPE html>
+<html lang="vi" class="js csstransforms3d">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.127.0">
+    <meta name="description" content="">
+<meta name="author" content="journeyoftheaverageguy@gmail.com">
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>20-06-2024 :: LÀM VIỆC VỚI AMAZON SYSTEM MANAGER - SESSION MANAGER</title>
+
+    
+    <link href="/css/nucleus.css?1718966445" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1718966445" rel="stylesheet">
+    <link href="/css/hybrid.css?1718966445" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1718966445" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1718966445" rel="stylesheet">
+    <link href="/css/auto-complete.css?1718966445" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1718966445" rel="stylesheet">
+    <link href="/css/theme.css?1718966445" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1718966445" rel="stylesheet">
+    
+    <link href="/css/theme-workshop.css?1718966445" rel="stylesheet">
+    
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1718966445"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/vi/1-introduce/2-20-06-2024/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="/">
+
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="30%"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:#f90;fill-rule:evenodd;}</style></defs><title>AWS-Logo_White-Color</title><path class="cls-1" d="M14.09,10.85a4.7,4.7,0,0,0,.19,1.48,7.73,7.73,0,0,0,.54,1.19.77.77,0,0,1,.12.38.64.64,0,0,1-.32.49l-1,.7a.83.83,0,0,1-.44.15.69.69,0,0,1-.49-.23,3.8,3.8,0,0,1-.6-.77q-.25-.42-.51-1a6.14,6.14,0,0,1-4.89,2.3,4.54,4.54,0,0,1-3.32-1.19,4.27,4.27,0,0,1-1.22-3.2A4.28,4.28,0,0,1,3.61,7.75,6.06,6.06,0,0,1,7.69,6.46a12.47,12.47,0,0,1,1.76.13q.92.13,1.91.36V5.73a3.65,3.65,0,0,0-.79-2.66A3.81,3.81,0,0,0,7.86,2.3a7.71,7.71,0,0,0-1.79.22,12.78,12.78,0,0,0-1.79.57,4.55,4.55,0,0,1-.58.22l-.26,0q-.35,0-.35-.52V2a1.09,1.09,0,0,1,.12-.58,1.2,1.2,0,0,1,.47-.35A10.88,10.88,0,0,1,5.77.32,10.19,10.19,0,0,1,8.36,0a6,6,0,0,1,4.35,1.35,5.49,5.49,0,0,1,1.38,4.09ZM7.34,13.38a5.36,5.36,0,0,0,1.72-.31A3.63,3.63,0,0,0,10.63,12,2.62,2.62,0,0,0,11.19,11a5.63,5.63,0,0,0,.16-1.44v-.7a14.35,14.35,0,0,0-1.53-.28,12.37,12.37,0,0,0-1.56-.1,3.84,3.84,0,0,0-2.47.67A2.34,2.34,0,0,0,5,11a2.35,2.35,0,0,0,.61,1.76A2.4,2.4,0,0,0,7.34,13.38Zm13.35,1.8a1,1,0,0,1-.64-.16,1.3,1.3,0,0,1-.35-.65L15.81,1.51a3,3,0,0,1-.15-.67.36.36,0,0,1,.41-.41H17.7a1,1,0,0,1,.65.16,1.4,1.4,0,0,1,.33.65l2.79,11,2.59-11A1.17,1.17,0,0,1,24.39.6a1.1,1.1,0,0,1,.67-.16H26.4a1.1,1.1,0,0,1,.67.16,1.17,1.17,0,0,1,.32.65L30,12.39,32.88,1.25A1.39,1.39,0,0,1,33.22.6a1,1,0,0,1,.65-.16h1.54a.36.36,0,0,1,.41.41,1.36,1.36,0,0,1,0,.26,3.64,3.64,0,0,1-.12.41l-4,12.86a1.3,1.3,0,0,1-.35.65,1,1,0,0,1-.64.16H29.25a1,1,0,0,1-.67-.17,1.26,1.26,0,0,1-.32-.67L25.67,3.64,23.11,14.34a1.26,1.26,0,0,1-.32.67,1,1,0,0,1-.67.17Zm21.36.44a11.28,11.28,0,0,1-2.56-.29,7.44,7.44,0,0,1-1.92-.67,1,1,0,0,1-.61-.93v-.84q0-.52.38-.52a.9.9,0,0,1,.31.06l.42.17a8.77,8.77,0,0,0,1.83.58,9.78,9.78,0,0,0,2,.2,4.48,4.48,0,0,0,2.43-.55,1.76,1.76,0,0,0,.86-1.57,1.61,1.61,0,0,0-.45-1.16A4.29,4.29,0,0,0,43,9.22l-2.41-.76A5.15,5.15,0,0,1,38,6.78a3.94,3.94,0,0,1-.83-2.41,3.7,3.7,0,0,1,.45-1.85,4.47,4.47,0,0,1,1.19-1.37A5.27,5.27,0,0,1,40.51.29,7.4,7.4,0,0,1,42.6,0a8.87,8.87,0,0,1,1.12.07q.57.07,1.08.19t.95.26a4.27,4.27,0,0,1,.7.29,1.59,1.59,0,0,1,.49.41.94.94,0,0,1,.15.55v.79q0,.52-.38.52a1.76,1.76,0,0,1-.64-.2,7.74,7.74,0,0,0-3.2-.64,4.37,4.37,0,0,0-2.21.47,1.6,1.6,0,0,0-.79,1.48,1.58,1.58,0,0,0,.49,1.18,4.94,4.94,0,0,0,1.83.92L44.55,7a5.08,5.08,0,0,1,2.57,1.6A3.76,3.76,0,0,1,47.9,11a4.21,4.21,0,0,1-.44,1.93,4.4,4.4,0,0,1-1.21,1.47,5.43,5.43,0,0,1-1.85.93A8.25,8.25,0,0,1,42.05,15.62Z"></path><path class="cls-2" d="M45.19,23.81C39.72,27.85,31.78,30,25,30A36.64,36.64,0,0,1,.22,20.57c-.51-.46-.06-1.09.56-.74A49.78,49.78,0,0,0,25.53,26.4,49.23,49.23,0,0,0,44.4,22.53C45.32,22.14,46.1,23.14,45.19,23.81Z"></path><path class="cls-2" d="M47.47,21.21c-.7-.9-4.63-.42-6.39-.21-.53.06-.62-.4-.14-.74,3.13-2.2,8.27-1.57,8.86-.83s-.16,5.89-3.09,8.35c-.45.38-.88.18-.68-.32C46.69,25.8,48.17,22.11,47.47,21.21Z"></path></svg>
+
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1718966445"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1718966445"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/\/localhost:1313\/\/vi";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1718966445"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/1-introduce/" title="WEEK 1" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/vi/1-introduce/">
+           <b> 1. </b> WEEK 1
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/1-introduce/1-19-06-2024/" title="19-06-2024" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/1-introduce/1-19-06-2024/">
+           <b>  </b> 19-06-2024
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/1-introduce/2-20-06-2024/" title="20-06-2024" class="dd-item 
+        
+        active
+        
+        ">
+      <a href="/vi/1-introduce/2-20-06-2024/">
+           <b>  </b> 20-06-2024
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/2-prerequiste/" title="Các bước chuẩn bị" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/2-prerequiste/">
+           <b> 2. </b> Các bước chuẩn bị
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/2-prerequiste/2.1-createec2/" title="Chuẩn bị VPC và EC2" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/2-prerequiste/2.1-createec2/">
+           <b> 2.1 </b> Chuẩn bị VPC và EC2
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/2-prerequiste/2.1-createec2/2.1.1-createvpc/" title="Tạo VPC " class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/2-prerequiste/2.1-createec2/2.1.1-createvpc/">
+           <b> 2.1.1 </b> Tạo VPC 
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/2-prerequiste/2.1-createec2/2.1.2-createpublicsubnet/" title="Tạo Public subnet" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/2-prerequiste/2.1-createec2/2.1.2-createpublicsubnet/">
+           <b> 2.1.2 </b> Tạo Public subnet
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/2-prerequiste/2.1-createec2/2.1.3-createprivatesubnet/" title="Tạo Private subnet" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/2-prerequiste/2.1-createec2/2.1.3-createprivatesubnet/">
+           <b> 2.1.3 </b> Tạo Private subnet
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/2-prerequiste/2.1-createec2/2.1.4-createsecgroup/" title="Tạo các security group" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/2-prerequiste/2.1-createec2/2.1.4-createsecgroup/">
+           <b> 2.1.4 </b> Tạo các security group
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/2-prerequiste/2.1-createec2/2.1.5-createec2linux/" title="Tạo Public Linux EC2" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/2-prerequiste/2.1-createec2/2.1.5-createec2linux/">
+           <b> 2.1.5 </b> Tạo Public Linux EC2
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/2-prerequiste/2.1-createec2/2.1.6-createec2windows/" title="Tạo Private Windows EC2" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/2-prerequiste/2.1-createec2/2.1.6-createec2windows/">
+           <b> 2.1.6 </b> Tạo Private Windows EC2
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/2-prerequiste/2.2-createiamrole/" title="Tạo IAM Role" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/2-prerequiste/2.2-createiamrole/">
+           <b> 2.2 </b> Tạo IAM Role
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/3-accessibilitytoinstances/" title="Tạo kết nối đến máy chủ EC2" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/3-accessibilitytoinstances/">
+           <b> 3. </b> Tạo kết nối đến máy chủ EC2
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/3-accessibilitytoinstances/3.1-public-instance/" title="Kết nối đến máy chủ Public" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/3-accessibilitytoinstances/3.1-public-instance/">
+           <b> 3.1. </b> Kết nối đến máy chủ Public
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/3-accessibilitytoinstances/3.2-private-instance/" title="Tạo kết nối đến máy chủ EC2 Private" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/3-accessibilitytoinstances/3.2-private-instance/">
+           <b> 3.2. </b> Tạo kết nối đến máy chủ EC2 Private
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.1-enablevpcdns/" title="Kích hoạt DNS hostnames" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.1-enablevpcdns/">
+           <b> 3.2.1 </b> Kích hoạt DNS hostnames
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/" title="Tạo VPC Endpoint" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/">
+           <b> 3.2.2 </b> Tạo VPC Endpoint
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.1-endpointssm/" title="Tạo Endpoint ssm" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.1-endpointssm/">
+           <b> 3.2.2.1 </b> Tạo Endpoint ssm
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.2-endpointssmmessages/" title="Tạo Endpoint ssmmessages" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.2-endpointssmmessages/">
+           <b> 3.2.2.2 </b> Tạo Endpoint ssmmessages
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.3-endpointec2messages/" title="Tạo Endpoint ec2messages" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.3-endpointec2messages/">
+           <b> 3.2.2.3 </b> Tạo Endpoint ec2messages
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.3-connectec2/" title="Kết nối EC2 Private" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.3-connectec2/">
+           <b> 3.2.3 </b> Kết nối EC2 Private
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/4-s3log/" title="Quản lý session logs" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/4-s3log/">
+           <b> 4. </b> Quản lý session logs
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/4-s3log/4.1-updateiamrole/" title="Cập nhật IAM Role" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/4-s3log/4.1-updateiamrole/">
+           <b> 4.1 </b> Cập nhật IAM Role
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/4-s3log/4.2-creates3bucket/" title="Tạo S3 Bucket" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/4-s3log/4.2-creates3bucket/">
+           <b> 4.2 </b> Tạo S3 Bucket
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/4-s3log/4.3-creategwes3/" title="Tạo S3 Gateway endpoint" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/4-s3log/4.3-creategwes3/">
+           <b> 4.3 </b> Tạo S3 Gateway endpoint
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/4-s3log/4.4-configsessionlogs/" title="Theo dõi session logs" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/4-s3log/4.4-configsessionlogs/">
+           <b> 4.4 </b> Theo dõi session logs
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/5-portfwd/" title="Port Forwarding" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/5-portfwd/">
+           <b> 5. </b> Port Forwarding
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/6-cleanup/" title="Dọn dẹp tài nguyên  " class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/6-cleanup/">
+          <b>6. </b>Dọn dẹp tài nguyên  
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="http://awsstudygroup.com"><i class='fab fa-aws'></i> AWS Study Group - Blog</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://www.facebook.com/groups/awsstudygroupfcj"><i class='fab fa-facebook'></i> AWS Study Group - Nhóm FB</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+        <li>
+          <a class="padding">
+            <i class="fas fa-language fa-fw"></i>
+          <div class="select-style">
+            <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+              
+              
+                  
+              
+                  
+                    
+                    
+                      <option id="vi" value="//localhost:1313/vi/1-introduce/2-20-06-2024/" selected>Tiếng Việt</option>
+                    
+                  
+              
+          
+        </select>
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="255px" height="255px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+          <g>
+            <g id="arrow-drop-down">
+              <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+            </g>
+          </g>
+        </svg>
+        </div>
+        </a>
+        </li>
+      
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <left>
+    
+    <b> Workshop</b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7920860&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" Alt="web counter" border="0" /></a> <br>
+    <b> <a href="https://cloudjourney.awsstudygroup.com/">Cloud Journey</a></b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7830807&style=0038&nbdigits=9&type=page&initCount=0" title="Total CLoud Journey" Alt="web counter" border="0" />
+
+</left>
+<left>
+    <br>
+    <br>
+    <b> Last Updated </b> <br>
+    <i><font color=orange>20-6-2024</font></i>
+</left>
+<left>
+    <br>
+    <br>
+    <b> Team </b> <br>
+
+    <i> <a href="https://github.com/Baoandev"  style="color:orange">Bảo An  </a> <br>
+                <a href="https://www.linkedin.com/in/jotaguy"  style="color:orange">Gia Hưng </a> <br>
+                <a href="https://www.linkedin.com/in/hiepnguyendt"  style="color:orange">Thanh Hiệp </a>
+               
+        </i>
+</left>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/vi/'>AWS - First Cloud Journey</a> > <a href='/vi/1-introduce/'>WEEK 1</a> > 20-06-2024
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents"></nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              20-06-2024
+            </h1>
+          
+
+        
+
+
+
+	<p><strong>AWS Well-Architected Framework</strong></p>
+<p>Sáu trụ cột</p>
+<ul>
+<li>Operational Excellence Pillar (Trụ cột vận hành xuất sắc)</li>
+<li>Security Pillar (Trụ cột bảo mật)</li>
+<li>Reliability Pillar (Trụ cột độ tin cậy)</li>
+<li>Pillars of productivity efficiency (Trụ cột hiệu quả năng suất)</li>
+<li>Cost optimization pillar (Trụ cột tối ưu hóa chi phí)</li>
+<li>Sustainability Pillar (Trụ cột tính bền vững)</li>
+</ul>
+<p><strong>Operational Excellence Pillar</strong></p>
+<p>There are five design principles (5 nguyên tắc) for operational excellence in the cloud:</p>
+<p>• Perform operations as code</p>
+<ul>
+<li><strong>Giải thích:</strong> Thay vì thực hiện các tác vụ quản lý và vận hành hệ thống một cách thủ công, hãy tự động hóa chúng bằng cách sử dụng mã. Điều này bao gồm việc sử dụng các công cụ như AWS CloudFormation hoặc Terraform để triển khai và quản lý cơ sở hạ tầng, hay sử dụng các script để thực hiện các công việc định kỳ.</li>
+<li><strong>Lợi ích:</strong> Tăng cường tính nhất quán, giảm thiểu lỗi do con người gây ra, và dễ dàng kiểm soát các thay đổi.</li>
+</ul>
+<p>• Make frequent, small, reversible changes ( Thực hiện những thay đổi nhỏ và có thể đảo ngược nếu gặp sự cố )</p>
+<ul>
+<li><strong>Giải thích:</strong> Thực hiện các thay đổi nhỏ và thường xuyên trong hệ thống thay vì thực hiện các thay đổi lớn và hiếm hoi. Mỗi thay đổi nhỏ cần phải dễ dàng đảo ngược nếu gặp phải sự cố.</li>
+<li><strong>Lợi ích:</strong> Giảm thiểu rủi ro khi thay đổi hệ thống, dễ dàng phát hiện và khắc phục sự cố, và tăng khả năng phản ứng nhanh với các yêu cầu mới.</li>
+</ul>
+<p>• Refine operations procedures frequently (Tinh chỉnh các quy trình hoạt động thường xuyên)</p>
+<ul>
+<li><strong>Giải thích:</strong> Liên tục đánh giá và cải thiện các quy trình hoạt động để đảm bảo chúng luôn hiệu quả và phù hợp với nhu cầu hiện tại. Điều này bao gồm việc kiểm tra và cập nhật các quy trình vận hành, đào tạo nhân viên và áp dụng các phương pháp mới.</li>
+<li><strong>Lợi ích:</strong> Tăng cường hiệu suất hoạt động, giảm thiểu rủi ro và lỗi, và đảm bảo hệ thống luôn sẵn sàng và hiệu quả.</li>
+</ul>
+<p>• Anticipate failure ( Dự đoán sự cố )</p>
+<ul>
+<li><strong>Giải thích:</strong> Luôn giả định rằng các sự cố sẽ xảy ra và chuẩn bị sẵn các kế hoạch để xử lý chúng. Điều này bao gồm việc xây dựng các cơ chế tự động phát hiện và khắc phục sự cố, cũng như thực hiện các bài kiểm tra dự phòng thường xuyên.</li>
+<li><strong>Lợi ích:</strong> Tăng cường khả năng phục hồi của hệ thống, giảm thiểu thời gian gián đoạn và đảm bảo tính liên tục của dịch vụ.</li>
+</ul>
+<p>• Learn from all operational failures ( Học hỏi từ tất cả các sự cố vận hành )</p>
+<ul>
+<li><strong>Giải thích:</strong> Mỗi khi có sự cố xảy ra, hãy phân tích nguyên nhân gốc rễ và tìm ra các biện pháp khắc phục để ngăn ngừa sự cố tương tự trong tương lai. Điều này bao gồm việc thu thập dữ liệu, phân tích sự cố và chia sẻ kiến thức trong toàn bộ tổ chức.</li>
+<li><strong>Lợi ích:</strong> Liên tục cải thiện hệ thống, nâng cao kiến thức và kỹ năng của nhân viên, và giảm thiểu các sự cố tương tự trong tương lai.</li>
+</ul>
+<p><strong>Security Pillar</strong></p>
+<p>There are seven design principles for security in the cloud ( 7 nguyên tắc )</p>
+<p>• Implement a strong identity foundation (Xây dựng nền tảng nhận dạng mạnh mẽ)</p>
+<ul>
+<li><strong>Giải thích:</strong> Sử dụng các phương pháp quản lý danh tính và quyền truy cập mạnh mẽ để kiểm soát ai có thể truy cập vào các tài nguyên và hành động gì họ có thể thực hiện. Điều này bao gồm việc sử dụng các nguyên tắc như quyền truy cập tối thiểu, xác thực đa yếu tố (MFA) và quản lý vai trò (IAM roles).</li>
+<li><strong>Lợi ích:</strong> Đảm bảo rằng chỉ những người dùng và dịch vụ được ủy quyền mới có thể truy cập và thao tác trên các tài nguyên, giảm thiểu rủi ro từ các truy cập trái phép.</li>
+</ul>
+<p>• Enable traceability (Kích hoạt khả năng theo dõi)</p>
+<ul>
+<li><strong>Giải thích:</strong> Ghi lại và theo dõi tất cả các hoạt động trong hệ thống để có thể phân tích và điều tra khi cần. Sử dụng các dịch vụ như AWS CloudTrail, AWS Config, và Amazon CloudWatch để thu thập và phân tích dữ liệu nhật ký.</li>
+<li><strong>Lợi ích:</strong> Cung cấp khả năng phát hiện và phản ứng nhanh chóng với các sự cố bảo mật, cũng như tuân thủ các yêu cầu pháp lý và quy định.</li>
+</ul>
+<p>• Apply security at all layers (Áp dụng bảo mật ở tất cả các lớp)</p>
+<ul>
+<li><strong>Giải thích:</strong> Bảo mật nên được tích hợp vào mọi lớp của hệ thống, bao gồm lớp mạng, hệ điều hành, ứng dụng và dữ liệu. Sử dụng các công cụ và dịch vụ bảo mật như tường lửa, mã hóa và kiểm tra lỗ hổng.</li>
+<li><strong>Lợi ích:</strong> Tăng cường khả năng bảo vệ toàn diện, giảm thiểu các điểm yếu và tạo ra nhiều lớp phòng thủ chống lại các mối đe dọa.</li>
+</ul>
+<p>• Automate security best practices (Tự động hóa các phương pháp bảo mật tốt nhất)</p>
+<ul>
+<li><strong>Giải thích:</strong> Tự động hóa các tác vụ bảo mật thông qua việc sử dụng mã và các công cụ tự động. Ví dụ: sử dụng AWS Lambda để thực hiện các kiểm tra bảo mật tự động hoặc AWS Security Hub để tập trung và tự động hóa quản lý bảo mật.</li>
+<li><strong>Lợi ích:</strong> Giảm thiểu lỗi do con người gây ra, tăng cường tính nhất quán và cho phép phản ứng nhanh chóng với các sự cố bảo mật.</li>
+</ul>
+<p>• Protect data in transit and at rest (Bảo vệ dữ liệu khi truyền và khi lưu trữ)</p>
+<ul>
+<li><strong>Giải thích:</strong> Sử dụng các phương pháp mã hóa để bảo vệ dữ liệu khi nó đang được truyền qua mạng và khi nó được lưu trữ. Sử dụng các dịch vụ như AWS Key Management Service (KMS) và SSL/TLS để mã hóa dữ liệu.</li>
+<li><strong>Lợi ích:</strong> Đảm bảo tính bảo mật và toàn vẹn của dữ liệu, ngăn chặn các truy cập trái phép và bảo vệ dữ liệu khỏi các mối đe dọa.</li>
+</ul>
+<p>• Keep people away from data (Giữ người dùng khỏi dữ liệu)</p>
+<ul>
+<li><strong>Giải thích:</strong> Giảm thiểu việc người dùng trực tiếp truy cập vào dữ liệu và hệ thống bằng cách sử dụng các công cụ tự động và các cơ chế kiểm soát truy cập. Ví dụ: sử dụng các công cụ quản lý và tự động hóa thay vì cho phép truy cập trực tiếp vào cơ sở dữ liệu.</li>
+<li><strong>Lợi ích:</strong> Giảm thiểu rủi ro do lỗi con người hoặc các hoạt động trái phép, và bảo vệ dữ liệu nhạy cảm.</li>
+</ul>
+<p>• Prepare for security events (Chuẩn bị cho các sự cố bảo mật)</p>
+<ul>
+<li><strong>Giải thích:</strong> Xây dựng và thực hiện các kế hoạch phản ứng sự cố bảo mật, bao gồm việc phát hiện, phản ứng, và khắc phục. Điều này bao gồm việc thử nghiệm và cập nhật các kế hoạch này thường xuyên.</li>
+<li><strong>Lợi ích:</strong> Tăng cường khả năng phản ứng nhanh chóng và hiệu quả với các sự cố bảo mật, giảm thiểu tác động và thời gian gián đoạn.</li>
+</ul>
+<p><strong>Reliability Pillar</strong></p>
+<p>There are five design principles for reliability in the cloud:</p>
+<p>• Automatically recover from failure (Tự động khôi phục từ sự cố)</p>
+<ul>
+<li><strong>Giải thích:</strong> Hệ thống phải có khả năng tự động phát hiện và khắc phục các sự cố mà không cần sự can thiệp của con người. Sử dụng các dịch vụ và cơ chế tự động để thay thế hoặc khắc phục các thành phần bị hỏng.</li>
+<li><strong>Lợi ích:</strong> Giảm thiểu thời gian gián đoạn dịch vụ, tăng cường tính sẵn sàng của hệ thống và đảm bảo dịch vụ liên tục cho người dùng.</li>
+</ul>
+<p>• Test recovery procedures (Kiểm tra các quy trình khôi phục)</p>
+<ul>
+<li><strong>Giải thích:</strong> Thường xuyên kiểm tra và đánh giá các quy trình khôi phục để đảm bảo chúng hoạt động hiệu quả khi cần. Điều này bao gồm việc thực hiện các bài kiểm tra dự phòng và kịch bản sự cố.</li>
+<li><strong>Lợi ích:</strong> Xác định và khắc phục các điểm yếu trong quy trình khôi phục, đảm bảo hệ thống có thể phục hồi nhanh chóng từ các sự cố và tăng cường khả năng sẵn sàng.</li>
+</ul>
+<p>• Scale horizontally to increase aggregate workload availability (Mở rộng ngang để tăng khả năng chịu tải tổng hợp)</p>
+<ul>
+<li><strong>Giải thích:</strong> Thay vì tăng cường năng lực của một thành phần duy nhất (mở rộng dọc), hãy thêm nhiều thành phần tương tự (mở rộng ngang) để phân phối tải công việc. Sử dụng các cơ chế cân bằng tải và các cụm máy chủ để đảm bảo khả năng mở rộng.</li>
+<li><strong>Lợi ích:</strong> Tăng khả năng chịu tải của hệ thống, giảm nguy cơ điểm đơn lẻ thất bại (single point of failure) và cải thiện hiệu suất.</li>
+</ul>
+<p>• Stop guessing capacity (Ngừng đoán dung lượng)</p>
+<ul>
+<li><strong>Giải thích:</strong> Sử dụng các công cụ và dịch vụ tự động để quản lý và dự đoán nhu cầu dung lượng thay vì dựa vào ước lượng thủ công. Sử dụng các dịch vụ như Auto Scaling để tự động điều chỉnh tài nguyên dựa trên nhu cầu thực tế.</li>
+<li><strong>Lợi ích:</strong> Đảm bảo hệ thống luôn có đủ tài nguyên để đáp ứng nhu cầu mà không bị quá tải hoặc lãng phí tài nguyên, tăng hiệu quả sử dụng tài nguyên và giảm chi phí.</li>
+</ul>
+<p>• Manage change in automation (Quản lý thay đổi bằng tự động hóa)</p>
+<ul>
+<li><strong>Giải thích:</strong> Tự động hóa quy trình quản lý thay đổi để đảm bảo các thay đổi được triển khai nhất quán và an toàn. Sử dụng các công cụ như AWS CloudFormation hoặc AWS CodePipeline để tự động hóa việc triển khai và quản lý các thay đổi.</li>
+<li><strong>Lợi ích:</strong> Giảm thiểu lỗi do con người gây ra, tăng tính nhất quán và tốc độ triển khai thay đổi, và đảm bảo rằng các thay đổi không làm ảnh hưởng tiêu cực đến tính sẵn sàng của hệ thống.</li>
+</ul>
+<p><strong>Pillars of productivity efficiency</strong></p>
+<p>There are five design principles</p>
+<p>• Democratize advanced technologies (Dân chủ hóa các công nghệ tiên tiến)</p>
+<ul>
+<li><strong>Giải thích:</strong> Sử dụng các dịch vụ đám mây để dễ dàng truy cập và triển khai các công nghệ tiên tiến mà trước đây chỉ có các tổ chức lớn mới có thể tiếp cận. AWS cung cấp nhiều dịch vụ tiên tiến như machine learning, phân tích dữ liệu lớn, và Internet of Things (IoT).</li>
+<li><strong>Lợi ích:</strong> Tăng cường khả năng sáng tạo và cạnh tranh, giảm chi phí và thời gian triển khai các giải pháp tiên tiến, và cho phép các tổ chức nhỏ và trung bình tiếp cận các công nghệ hàng đầu.</li>
+</ul>
+<p>• Go global in minutes  (Triển khai toàn cầu trong vài phút)</p>
+<ul>
+<li><strong>Giải thích:</strong> Sử dụng cơ sở hạ tầng đám mây để mở rộng hệ thống và dịch vụ ra toàn cầu một cách nhanh chóng. AWS cung cấp các khu vực và khu vực khả dụng (availability zones) trên toàn thế giới, cho phép bạn triển khai ứng dụng gần với người dùng cuối.</li>
+<li><strong>Lợi ích:</strong> Cải thiện hiệu suất và độ trễ cho người dùng toàn cầu, dễ dàng đáp ứng các yêu cầu pháp lý và quy định địa phương, và tăng cường tính linh hoạt và khả năng phục hồi của hệ thống.</li>
+</ul>
+<p>• Use serverless architectures (Sử dụng kiến trúc không máy chủ)</p>
+<ul>
+<li><strong>Giải thích:</strong> Tận dụng các dịch vụ không máy chủ (serverless) như AWS Lambda để chạy mã mà không cần quản lý cơ sở hạ tầng máy chủ. Serverless cho phép bạn tập trung vào logic kinh doanh và tự động quản lý việc mở rộng và tối ưu hóa tài nguyên.</li>
+<li><strong>Lợi ích:</strong> Giảm chi phí vận hành và quản lý cơ sở hạ tầng, tăng cường khả năng mở rộng và phản ứng nhanh với các thay đổi về nhu cầu, và đơn giản hóa việc triển khai và bảo trì ứng dụng.</li>
+</ul>
+<p>• Experiment more often (Thử nghiệm thường xuyên hơn)</p>
+<ul>
+<li><strong>Giải thích:</strong> Sử dụng môi trường đám mây để dễ dàng và nhanh chóng thử nghiệm các ý tưởng mới. AWS cung cấp các dịch vụ có thể được triển khai và điều chỉnh linh hoạt, cho phép bạn tạo và kiểm tra các giả thuyết một cách nhanh chóng.</li>
+<li><strong>Lợi ích:</strong> Tăng cường khả năng đổi mới và cải tiến liên tục, giảm rủi ro và chi phí liên quan đến việc thử nghiệm, và cải thiện chất lượng sản phẩm và dịch vụ thông qua thử nghiệm và học hỏi.</li>
+</ul>
+<p>• Consider mechanical sympathy (Cân nhắc về sự đồng cảm cơ học)</p>
+<ul>
+<li><strong>Giải thích:</strong> Hiểu rõ cách thức hoạt động của các tài nguyên cơ bản và thiết kế hệ thống để tận dụng tối đa các đặc điểm của chúng. Ví dụ, tối ưu hóa việc sử dụng CPU, bộ nhớ, và băng thông để đạt hiệu suất tối đa.</li>
+<li><strong>Lợi ích:</strong> Tăng hiệu suất và hiệu quả sử dụng tài nguyên, giảm thiểu lãng phí và chi phí, và đảm bảo rằng hệ thống hoạt động một cách tối ưu với các tài nguyên hiện có.</li>
+</ul>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/vi/1-introduce/1-19-06-2024/" title="19-06-2024"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/vi/2-prerequiste/" title="Các bước chuẩn bị" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1718966445"></script>
+    <script src="/js/perfect-scrollbar.min.js?1718966445"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1718966445"></script>
+    <script src="/js/jquery.sticky.js?1718966445"></script>
+    <script src="/js/featherlight.min.js?1718966445"></script>
+    <script src="/js/highlight.pack.js?1718966445"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1718966445"></script>
+    <script src="/js/learn.js?1718966445"></script>
+    <script src="/js/hugo-learn.js?1718966445"></script>
+
+    <link href="/mermaid/mermaid.css?1718966445" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1718966445"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-158079754-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>

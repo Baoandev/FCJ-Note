@@ -1,0 +1,183 @@
+[
+{
+	"uri": "//localhost:1313/vi/",
+	"title": "AWS - First Cloud Journey",
+	"tags": [],
+	"description": "",
+	"content": "AWS - First Cloud Journey Tổng quan Nơi note toàn bộ những kiến thức được học ở AWS\nNội dung WEEK 1 WEEK 2 Tạo kết nối đến máy chủ EC2 Quản lý session logs Port Forwarding Dọn dẹp tài nguyên "
+},
+{
+	"uri": "//localhost:1313/vi/1-week1/1-19-06-2024/",
+	"title": "19-06-2024",
+	"tags": [],
+	"description": "",
+	"content": "Cloud Computing là gì Điện toán đám mây là việc phân phối các tài nguyên CNTT theo nhu cầu qua internet với chính sách thanh toán theo mức sử dụng.\nLợi ích của điện toán đám mây\nSử dụng bao nhiêu tính tiền bấy nhiêu, cung cấp khả năng tối ưu hóa chi phí Tăng tốc độ phát triển nhờ tận dụng các tính năng tự động hóa và quản trị bởi nhà cung cấp dịch vụ Linh hoạt Mở rộng qui mô ứng dụng lên toàn cầu AWS khác biệt?\nLà nhà cung cấp hạ tầng cloud dẫn đầu trong 13 năm liên tiếp\nKhác biệt về tầm nhìn và giá\nTriết lý về giá của AWS: Khách hàng sẽ chi trả càng ngày càng ít tiền cho cùng 1 dịch vụ, tính năng, tài nguyên sử dụng\nMang lại giá trị thực sự cho khách hàng lên hàng đầu trong tất cả các nguyên tắc lãnh đạo ( Leadership Principles ) Trung tâm dữ liệu của AWS\n1 trung tâm dữ liệu có thể chứa hàng chục ngàn máy chủ\nTất cả trung tâm dữ liệu của AWS đều sử dụng các thiết bị được tối ưu hóa dành riêng cho hoạt động của AWS\nAvailability zone 1 AZ bao gồm 1 hoặc nhiều trung tâm dữ liệu , các AZ được thiết kế để không xảy ra sự cố ảnh hưởng đồng thời 2 AZ một lúc ( Fault isolation ).\nGiữa 2 AZ là đường kết nối riêng có tốc độ cao.\nAWS khuyến nghị nên triển khai ứng dụng tối thiểu trên 2 AZ.\nRegion Một AWS Region bao gồm tối thiểu 3 Availability Zone (AZ). Hiện tại có hơn 25 Region trên toàn cầu.\nCác Region được kết nối với nhau bởi mạng backbone của AWS.\nMặc định dữ liệu và dịch vụ ở các Region độc lập với nhau.\nEdge Locations\nLà mạng lưới trung tâm dữ liệu AWS được thiết kế để cung cấp dịch vụ với độ trễ thấp nhất có thể\nCác dịch vụ AWS hoạt động tại Edge location (POP) bao gồm:\nCloudFront (CDN)\nWeb Application Firewall (WAF)\nRoute 53 (DNS Service)\nCông cụ quản lí AWS service\nAWS CLI Cho phép tương tác với các dịch vụ AWS bằng các lệnh command AWS SDK AWS SDK đơn giản hóa việc sử dụng AWS Service cho ứng dụng bằng cách cung cấp một bộ thư viện nhất quán và quen thuộc cho đội ngũ phát triển ứng dụng\nAWS SDK cung cấp hỗ trợ cho những công việc quản lí vòng đời của API tới AWS Service như quản lí thông tin xác thực (Manage Credentials ), thử lại (retry), sắp xếp dữ liệu ( data marshalling - chuẩn bị dữ liệu), tuần tự hóa ( Serialization chuyển object sang bytes stream) và giải mã hóa ( deserialization chuyển bytes stream về lại object )\nTối ưu hóa chi phí trên AWS\nLựa chọn cấu hình tài nguyên tính toán và nơi lưu trữ dữ liệu phù hợp\rTận dụng các phương thức thanh toán giảm giá như reserved instance, saving plan, spot Xóa các tài nguyên không sử dụng, bật tắt tự động các tài nguyên không cần chạy 24/7 Tận dụng các dịch vụ serverless\rThiết kế kiến trúc tối ưu giải quyết các yêu cầu đề ra\rCài đặt và sử dụng AWS Budget\rQuản lí chi phí theo phòng ban / ứng dụng với cost allocation tag Liên tục theo dõi và tối ưu hóa chi phí\rCông cụ tính toán chi phí\nAWS Pricing Calculator\nCho phép tạo các estimate các dịch vụ thông dụng Có thể chia sẻ các estimate cho người khác Chi phí sẽ khác biệt theo từng Region\rAWS Support\nBasic ( Explore ) Developer ( Test / dev ) Business ( Production ) Enterprise ( Large Enterprise ) Lab 000007 - Create Budget\nCost Budget cho phép bạn gửi cảnh báo khi tổng chi phí vượt qua ngưỡng chi phí trong ngân sách\nUsage Budget cho phép bạn cảnh báo khi tổng mức sử dụng theo từng dịch vụ bạn lựa chọn vượt qua ngưỡng mức sử dụng trong ngân sách. VD: mức sử dụng theo số giờ chạy của EC2\nReservation Instance (RI) budget cho phép bạn gửi cảnh báo dựa trên mức sử dụng các dịch vụ trả trước ( reserve instance) của bạn.\nSaving plans budget cho phép bạn gửi cảnh báo dựa trên mức sử dụng các dịch vụ đã được qui định trong saving plans\n"
+},
+{
+	"uri": "//localhost:1313/vi/1-week1/2-20-06-2024/",
+	"title": "20-06-2024",
+	"tags": [],
+	"description": "",
+	"content": "AWS Well-Architected Framework\nSáu trụ cột\nOperational Excellence Pillar (Trụ cột vận hành xuất sắc) Security Pillar (Trụ cột bảo mật) Reliability Pillar (Trụ cột độ tin cậy) Pillars of productivity efficiency (Trụ cột hiệu quả năng suất) Cost optimization pillar (Trụ cột tối ưu hóa chi phí) Sustainability Pillar (Trụ cột tính bền vững) Operational Excellence Pillar\nThere are five design principles (5 nguyên tắc) for operational excellence in the cloud:\n• Perform operations as code\nGiải thích: Thay vì thực hiện các tác vụ quản lý và vận hành hệ thống một cách thủ công, hãy tự động hóa chúng bằng cách sử dụng mã. Điều này bao gồm việc sử dụng các công cụ như AWS CloudFormation hoặc Terraform để triển khai và quản lý cơ sở hạ tầng, hay sử dụng các script để thực hiện các công việc định kỳ. Lợi ích: Tăng cường tính nhất quán, giảm thiểu lỗi do con người gây ra, và dễ dàng kiểm soát các thay đổi. • Make frequent, small, reversible changes ( Thực hiện những thay đổi nhỏ và có thể đảo ngược nếu gặp sự cố )\nGiải thích: Thực hiện các thay đổi nhỏ và thường xuyên trong hệ thống thay vì thực hiện các thay đổi lớn và hiếm hoi. Mỗi thay đổi nhỏ cần phải dễ dàng đảo ngược nếu gặp phải sự cố. Lợi ích: Giảm thiểu rủi ro khi thay đổi hệ thống, dễ dàng phát hiện và khắc phục sự cố, và tăng khả năng phản ứng nhanh với các yêu cầu mới. • Refine operations procedures frequently (Tinh chỉnh các quy trình hoạt động thường xuyên)\nGiải thích: Liên tục đánh giá và cải thiện các quy trình hoạt động để đảm bảo chúng luôn hiệu quả và phù hợp với nhu cầu hiện tại. Điều này bao gồm việc kiểm tra và cập nhật các quy trình vận hành, đào tạo nhân viên và áp dụng các phương pháp mới. Lợi ích: Tăng cường hiệu suất hoạt động, giảm thiểu rủi ro và lỗi, và đảm bảo hệ thống luôn sẵn sàng và hiệu quả. • Anticipate failure ( Dự đoán sự cố )\nGiải thích: Luôn giả định rằng các sự cố sẽ xảy ra và chuẩn bị sẵn các kế hoạch để xử lý chúng. Điều này bao gồm việc xây dựng các cơ chế tự động phát hiện và khắc phục sự cố, cũng như thực hiện các bài kiểm tra dự phòng thường xuyên. Lợi ích: Tăng cường khả năng phục hồi của hệ thống, giảm thiểu thời gian gián đoạn và đảm bảo tính liên tục của dịch vụ. • Learn from all operational failures ( Học hỏi từ tất cả các sự cố vận hành )\nGiải thích: Mỗi khi có sự cố xảy ra, hãy phân tích nguyên nhân gốc rễ và tìm ra các biện pháp khắc phục để ngăn ngừa sự cố tương tự trong tương lai. Điều này bao gồm việc thu thập dữ liệu, phân tích sự cố và chia sẻ kiến thức trong toàn bộ tổ chức. Lợi ích: Liên tục cải thiện hệ thống, nâng cao kiến thức và kỹ năng của nhân viên, và giảm thiểu các sự cố tương tự trong tương lai. Security Pillar\nThere are seven design principles for security in the cloud ( 7 nguyên tắc )\n• Implement a strong identity foundation (Xây dựng nền tảng nhận dạng mạnh mẽ)\nGiải thích: Sử dụng các phương pháp quản lý danh tính và quyền truy cập mạnh mẽ để kiểm soát ai có thể truy cập vào các tài nguyên và hành động gì họ có thể thực hiện. Điều này bao gồm việc sử dụng các nguyên tắc như quyền truy cập tối thiểu, xác thực đa yếu tố (MFA) và quản lý vai trò (IAM roles). Lợi ích: Đảm bảo rằng chỉ những người dùng và dịch vụ được ủy quyền mới có thể truy cập và thao tác trên các tài nguyên, giảm thiểu rủi ro từ các truy cập trái phép. • Enable traceability (Kích hoạt khả năng theo dõi)\nGiải thích: Ghi lại và theo dõi tất cả các hoạt động trong hệ thống để có thể phân tích và điều tra khi cần. Sử dụng các dịch vụ như AWS CloudTrail, AWS Config, và Amazon CloudWatch để thu thập và phân tích dữ liệu nhật ký. Lợi ích: Cung cấp khả năng phát hiện và phản ứng nhanh chóng với các sự cố bảo mật, cũng như tuân thủ các yêu cầu pháp lý và quy định. • Apply security at all layers (Áp dụng bảo mật ở tất cả các lớp)\nGiải thích: Bảo mật nên được tích hợp vào mọi lớp của hệ thống, bao gồm lớp mạng, hệ điều hành, ứng dụng và dữ liệu. Sử dụng các công cụ và dịch vụ bảo mật như tường lửa, mã hóa và kiểm tra lỗ hổng. Lợi ích: Tăng cường khả năng bảo vệ toàn diện, giảm thiểu các điểm yếu và tạo ra nhiều lớp phòng thủ chống lại các mối đe dọa. • Automate security best practices (Tự động hóa các phương pháp bảo mật tốt nhất)\nGiải thích: Tự động hóa các tác vụ bảo mật thông qua việc sử dụng mã và các công cụ tự động. Ví dụ: sử dụng AWS Lambda để thực hiện các kiểm tra bảo mật tự động hoặc AWS Security Hub để tập trung và tự động hóa quản lý bảo mật. Lợi ích: Giảm thiểu lỗi do con người gây ra, tăng cường tính nhất quán và cho phép phản ứng nhanh chóng với các sự cố bảo mật. • Protect data in transit and at rest (Bảo vệ dữ liệu khi truyền và khi lưu trữ)\nGiải thích: Sử dụng các phương pháp mã hóa để bảo vệ dữ liệu khi nó đang được truyền qua mạng và khi nó được lưu trữ. Sử dụng các dịch vụ như AWS Key Management Service (KMS) và SSL/TLS để mã hóa dữ liệu. Lợi ích: Đảm bảo tính bảo mật và toàn vẹn của dữ liệu, ngăn chặn các truy cập trái phép và bảo vệ dữ liệu khỏi các mối đe dọa. • Keep people away from data (Giữ người dùng khỏi dữ liệu)\nGiải thích: Giảm thiểu việc người dùng trực tiếp truy cập vào dữ liệu và hệ thống bằng cách sử dụng các công cụ tự động và các cơ chế kiểm soát truy cập. Ví dụ: sử dụng các công cụ quản lý và tự động hóa thay vì cho phép truy cập trực tiếp vào cơ sở dữ liệu. Lợi ích: Giảm thiểu rủi ro do lỗi con người hoặc các hoạt động trái phép, và bảo vệ dữ liệu nhạy cảm. • Prepare for security events (Chuẩn bị cho các sự cố bảo mật)\nGiải thích: Xây dựng và thực hiện các kế hoạch phản ứng sự cố bảo mật, bao gồm việc phát hiện, phản ứng, và khắc phục. Điều này bao gồm việc thử nghiệm và cập nhật các kế hoạch này thường xuyên. Lợi ích: Tăng cường khả năng phản ứng nhanh chóng và hiệu quả với các sự cố bảo mật, giảm thiểu tác động và thời gian gián đoạn. Reliability Pillar\nThere are five design principles for reliability in the cloud:\n• Automatically recover from failure (Tự động khôi phục từ sự cố)\nGiải thích: Hệ thống phải có khả năng tự động phát hiện và khắc phục các sự cố mà không cần sự can thiệp của con người. Sử dụng các dịch vụ và cơ chế tự động để thay thế hoặc khắc phục các thành phần bị hỏng. Lợi ích: Giảm thiểu thời gian gián đoạn dịch vụ, tăng cường tính sẵn sàng của hệ thống và đảm bảo dịch vụ liên tục cho người dùng. • Test recovery procedures (Kiểm tra các quy trình khôi phục)\nGiải thích: Thường xuyên kiểm tra và đánh giá các quy trình khôi phục để đảm bảo chúng hoạt động hiệu quả khi cần. Điều này bao gồm việc thực hiện các bài kiểm tra dự phòng và kịch bản sự cố. Lợi ích: Xác định và khắc phục các điểm yếu trong quy trình khôi phục, đảm bảo hệ thống có thể phục hồi nhanh chóng từ các sự cố và tăng cường khả năng sẵn sàng. • Scale horizontally to increase aggregate workload availability (Mở rộng ngang để tăng khả năng chịu tải tổng hợp)\nGiải thích: Thay vì tăng cường năng lực của một thành phần duy nhất (mở rộng dọc), hãy thêm nhiều thành phần tương tự (mở rộng ngang) để phân phối tải công việc. Sử dụng các cơ chế cân bằng tải và các cụm máy chủ để đảm bảo khả năng mở rộng. Lợi ích: Tăng khả năng chịu tải của hệ thống, giảm nguy cơ điểm đơn lẻ thất bại (single point of failure) và cải thiện hiệu suất. • Stop guessing capacity (Ngừng đoán dung lượng)\nGiải thích: Sử dụng các công cụ và dịch vụ tự động để quản lý và dự đoán nhu cầu dung lượng thay vì dựa vào ước lượng thủ công. Sử dụng các dịch vụ như Auto Scaling để tự động điều chỉnh tài nguyên dựa trên nhu cầu thực tế. Lợi ích: Đảm bảo hệ thống luôn có đủ tài nguyên để đáp ứng nhu cầu mà không bị quá tải hoặc lãng phí tài nguyên, tăng hiệu quả sử dụng tài nguyên và giảm chi phí. • Manage change in automation (Quản lý thay đổi bằng tự động hóa)\nGiải thích: Tự động hóa quy trình quản lý thay đổi để đảm bảo các thay đổi được triển khai nhất quán và an toàn. Sử dụng các công cụ như AWS CloudFormation hoặc AWS CodePipeline để tự động hóa việc triển khai và quản lý các thay đổi. Lợi ích: Giảm thiểu lỗi do con người gây ra, tăng tính nhất quán và tốc độ triển khai thay đổi, và đảm bảo rằng các thay đổi không làm ảnh hưởng tiêu cực đến tính sẵn sàng của hệ thống. Pillars of productivity efficiency\nThere are five design principles\n• Democratize advanced technologies (Dân chủ hóa các công nghệ tiên tiến)\nGiải thích: Sử dụng các dịch vụ đám mây để dễ dàng truy cập và triển khai các công nghệ tiên tiến mà trước đây chỉ có các tổ chức lớn mới có thể tiếp cận. AWS cung cấp nhiều dịch vụ tiên tiến như machine learning, phân tích dữ liệu lớn, và Internet of Things (IoT). Lợi ích: Tăng cường khả năng sáng tạo và cạnh tranh, giảm chi phí và thời gian triển khai các giải pháp tiên tiến, và cho phép các tổ chức nhỏ và trung bình tiếp cận các công nghệ hàng đầu. • Go global in minutes (Triển khai toàn cầu trong vài phút)\nGiải thích: Sử dụng cơ sở hạ tầng đám mây để mở rộng hệ thống và dịch vụ ra toàn cầu một cách nhanh chóng. AWS cung cấp các khu vực và khu vực khả dụng (availability zones) trên toàn thế giới, cho phép bạn triển khai ứng dụng gần với người dùng cuối. Lợi ích: Cải thiện hiệu suất và độ trễ cho người dùng toàn cầu, dễ dàng đáp ứng các yêu cầu pháp lý và quy định địa phương, và tăng cường tính linh hoạt và khả năng phục hồi của hệ thống. • Use serverless architectures (Sử dụng kiến trúc không máy chủ)\nGiải thích: Tận dụng các dịch vụ không máy chủ (serverless) như AWS Lambda để chạy mã mà không cần quản lý cơ sở hạ tầng máy chủ. Serverless cho phép bạn tập trung vào logic kinh doanh và tự động quản lý việc mở rộng và tối ưu hóa tài nguyên. Lợi ích: Giảm chi phí vận hành và quản lý cơ sở hạ tầng, tăng cường khả năng mở rộng và phản ứng nhanh với các thay đổi về nhu cầu, và đơn giản hóa việc triển khai và bảo trì ứng dụng. • Experiment more often (Thử nghiệm thường xuyên hơn)\nGiải thích: Sử dụng môi trường đám mây để dễ dàng và nhanh chóng thử nghiệm các ý tưởng mới. AWS cung cấp các dịch vụ có thể được triển khai và điều chỉnh linh hoạt, cho phép bạn tạo và kiểm tra các giả thuyết một cách nhanh chóng. Lợi ích: Tăng cường khả năng đổi mới và cải tiến liên tục, giảm rủi ro và chi phí liên quan đến việc thử nghiệm, và cải thiện chất lượng sản phẩm và dịch vụ thông qua thử nghiệm và học hỏi. • Consider mechanical sympathy (Cân nhắc về sự đồng cảm cơ học)\nGiải thích: Hiểu rõ cách thức hoạt động của các tài nguyên cơ bản và thiết kế hệ thống để tận dụng tối đa các đặc điểm của chúng. Ví dụ, tối ưu hóa việc sử dụng CPU, bộ nhớ, và băng thông để đạt hiệu suất tối đa. Lợi ích: Tăng hiệu suất và hiệu quả sử dụng tài nguyên, giảm thiểu lãng phí và chi phí, và đảm bảo rằng hệ thống hoạt động một cách tối ưu với các tài nguyên hiện có. "
+},
+{
+	"uri": "//localhost:1313/vi/2-week2/1-24-06-2024/",
+	"title": "24-06-2024",
+	"tags": [],
+	"description": "",
+	"content": "Sovico lab VPC Fundamentals Tạo VPC\nSetting VPC, Click chọn Enable DNS hostnames\nTạo subnets\nChọn VPC A vừa tạo VPC ID\nSetting subnet như sau\nTạo xong sẽ có 1 subnets ở Subnets list\nLần lượt tạo thêm 3 Subnets nữa (mỗi AZ có 1 Subnet public và 1 Subnet private )\nSelect Network ACL\nCreate Network ACL\nChọn Subnet associations và click Edit\nChọn 4 Subnets vừa tạo\nNgoài trang Network ACLs, select inbound rules và chọn edit\nEdit inbound rules\nNgoài trang Network ACLs, select outbound rules và chọn edit\nEdit outbound rules\nTạo route table\nSelect Subnet Associations và chọn edit\nChọn 2 subnet pulics\nTạo thêm 1 route table private\nEdit Subnet associations và chọn 2 subnet private\nTạo Internets gateways\nAttach to vpc\nUpdate route tables, select Routes chọn edit routes\nEdit Routes\nCreate Nat gateways\nUpdate Private Route tables, Vào Route tables, select private route table và chọn route, sau đó edit routes\nCreate endpoints\nCreate another endpoint\nLaunch an EC2 instance\nLauch another\nTest connect\nMultiples VPCS VPC peering\nTransit gateway\nSecurity controls Network acls\nEndpoint policy\nConnecting to on-premises Etablish vpn connection\n"
+},
+{
+	"uri": "//localhost:1313/vi/2-week2/2-25-06-2024/",
+	"title": "25-06-2024",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/vi/2-week2/3-26-06-2024/",
+	"title": "26-06-2024",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/vi/4-s3log/4.1-updateiamrole/",
+	"title": "Cập nhật IAM Role",
+	"tags": [],
+	"description": "",
+	"content": "Để các EC2 instance của chúng ta có thể gửi session log tới S3 bucket , chúng ta sẽ cần cập nhật IAM Role đã gán vào EC2 instance bằng cách thêm vào policy cho phép quyền truy cập vào S3.\nCập nhật IAM Role Truy cập vào giao diện quản trị dịch vụ IAM\nClick Roles. Tại ô tìm kiếm , điền SSM. Click vào role SSM-Role. Click Attach policies. Tại ô Search điền S3.\nClick chọn policy AmazonS3FullAccess. Click Add permissions. Trong thực tế chúng ta sẽ cấp quyền chặt chẽ hơn tới S3 bucket chỉ định. Trong khuôn khổ bài lab này chúng ta sử dụng policy AmazonS3FullAccess cho tiện dụng.\nTiếp theo chúng ta sẽ tiến hành tạo S3 bucket để lưu trữ session logs.\n"
+},
+{
+	"uri": "//localhost:1313/vi/3-accessibilitytoinstances/3.1-public-instance/",
+	"title": "Kết nối đến máy chủ Public",
+	"tags": [],
+	"description": "",
+	"content": "\nTruy cập vào giao diện quản trị của dịch vụ EC2.\nClick chọn Public Linux Instance. Click Actions. Click Security. Click Modify IAM role. Tại trang Modify IAM role.\nClick chọn SSM-Role. Click Update IAM role. Bạn sẽ cần chờ khoảng 10 phút trước khi thực hiện bước tiếp theo. Thời gian này EC2 instance của chúng ta sẽ tự động đăng ký với Session Manager.\nTruy cập vào giao diện quản trị của dịch vụ AWS Systems Manager\nKéo thanh trượt menu bên trái xuống dưới. Click Session Manager. Click Start Session. Sau đó chọn Public Linux Instance và click Start session để truy cập vào instance. Terminal sẽ xuất hiện trên trình duyệt. Kiểm tra với câu lệnh sudo tcpdump -nn port 22 và sudo tcpdump chúng ta sẽ thấy không có traffic của SSH mà chỉ có traffic HTTPS. Ở trên, chúng ta đã tạo kết nối vào public instance mà không cần mở cổng SSH 22, giúp cho việc bảo mật tốt hơn, tránh mọi sự tấn công tới cổng SSH.\nMột nhược điểm của cách làm trên là ta phải mở Security Group outbound ở cổng 443 ra ngoài internet. Vì là public instance nên có thể sẽ không vấn đề gì nhưng nếu bạn muốn bảo mật hơn nữa, bạn có thể khoá cổng 443 ra ngoài internet mà vẫn sử dụng được Session Manager. Chúng ta sẽ đi qua cách làm này ở phần private instance dưới đây.\nBạn có thể terminate để kết thúc session đang kết nối trước khi qua bước tiếp theo.\n"
+},
+{
+	"uri": "//localhost:1313/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.1-enablevpcdns/",
+	"title": "Kích hoạt DNS hostnames",
+	"tags": [],
+	"description": "",
+	"content": "Kích hoạt tính năng DNS hostnames trên VPC. Để tạo được VPC Endpoint chúng ta sẽ cần bật tính năng DNS hostnames trên VPC. Truy cập đến giao diện quản trị của dịch vụ VPC Click Your VPCs. Chọn Lab VPC. Click Actions. Click Edit VPC settings. Tại mục DNS setting. Click tick cho Enable DNS hostnames. Click Save. "
+},
+{
+	"uri": "//localhost:1313/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.1-endpointssm/",
+	"title": "Tạo Endpoint ssm",
+	"tags": [],
+	"description": "",
+	"content": "Tạo VPC Endpoint SSM Truy cập đến giao diện quản trị của dịch vụ VPC\nClick Endpoints. Click Create endpoint. Tại trang Create endpoint.\nTại mục Name tag điền SSM. Tại mục Service Category chọn AWS Services. Tại mục Service, điền .ssm vào thanh tìm kiếm Tại mục Service category chọn: AWS services Sau đó chọn Service Name: com.amazonaws.ap-southeast-1.ssm. Tại mục VPC, chọn Lab VPC. Chọn AZ đầu tiên, sau đó chọn subnet Lab Private Subnet. Kéo chuột xuống dưới.\nTại mục Security Group, chọn Security group SG VPC Endpoint mà chúng ta đã tạo trước đó. Tại mục Policy, chọn Full access Kéo chuột xuống dưới cùng.\nClick Create endpoint. Chúng ta đã tạo xong VPC Interface Endpoint cho SSM.\n"
+},
+{
+	"uri": "//localhost:1313/vi/1-week1/",
+	"title": "WEEK 1",
+	"tags": [],
+	"description": "",
+	"content": "NOTE WEEK 1\n"
+},
+{
+	"uri": "//localhost:1313/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.2-endpointssmmessages/",
+	"title": "Tạo Endpoint ssmmessages",
+	"tags": [],
+	"description": "",
+	"content": "Tạo VPC Endpoint SSMMESSAGES Truy cập đến giao diện quản trị của dịch vụ VPC\nClick Endpoints. Click Create endpoint. Tại trang Create endpoint.\nTại mục Name tag điền SSMMESSAGES. Tại mục Service Category chọn AWS Services. Tại mục Services, Tại thanh Search nhập: .ssmmessages, sau đó chọn Service Name: com.amazonaws.ap-southeast-1.ssmmessages. Tại mục VPC, chọn Lab VPC. Chọn AZ đầu tiên, sau đó chọn subnet Lab Private Subnet. Tại mục Security Group, chọn Security group SG VPC Endpoint mà chúng ta đã tạo trước đó. Tại mục Policy, chọn Full access Kéo chuột xuống dưới cùng.\nClick Create endpoint. Chúng ta đã tạo xong VPC Interface Endpoint SSMMESSAGES.\n"
+},
+{
+	"uri": "//localhost:1313/vi/3-accessibilitytoinstances/3.2-private-instance/",
+	"title": "Tạo kết nối đến máy chủ EC2 Private",
+	"tags": [],
+	"description": "",
+	"content": "Đối với Windows instance nằm trong private subnet, không có public IP, không có internet gateway nên không thể đi ra ngoài internet.\nVới loại instance này, cách làm truyền thống là ta sẽ sử dụng kỹ thuật Bastion host tốn nhiều chi phí và công sức, nhưng ở đây chúng ta sẽ sử dụng Session Manager với loại này.\nCơ bản là private instance vẫn phải mở cổng TCP 443 tới System Manager, nhưng không cho kết nối đó đi ra ngoài internet mà chỉ cho đi trong chính VPC của mình, nên đảm bảo được vấn đề bảo mật.\nĐể làm được điều đó, ta phải đưa endpoint của System Manager vào trong VPC, nghĩa là sử dụng VPC interface endpoint:\nVPC interface endpoint được gắn với subnet nên cách làm này không những với private subnet mà còn có thể làm với public subnet, nghĩa là với public subnet, bạn hoàn toàn có thể không cho TCP 443 đi ra ngoài internet.\nNội dung: Kích hoạt DNS hostnames Tạo VPC Endpoint Kết nối Private Instance "
+},
+{
+	"uri": "//localhost:1313/vi/4-s3log/4.2-creates3bucket/",
+	"title": "Tạo S3 Bucket",
+	"tags": [],
+	"description": "",
+	"content": "Trong bước này, chúng ta sẽ tạo 1 S3 bucket để lưu trữ các session logs được gửi từ các EC2 instance.\nTạo S3 Bucket Truy cập giao diện quản trị dịch vụ S3\nClick Create bucket. Tại trang Create bucket.\nIn the Bucket type, select General purpose Tại mục Bucket name điền tên bucket lab-yourname-bucket-0001 In the Object Ownership section, select ACLs disable (recommended) Tên S3 bucket phải đảm bảo không trùng với toàn bộ S3 bucket khác trong hệ thống. Bạn có thể thay thế tên mình và điền số ngẫu nhiên khi tạo tên S3 bucket.\nKéo chuột xuống phía dưới và click Create bucket. Khi tạo S3 bucket chúng ta đã thực hiện Block all public access nên các EC2 instance của chúng ta sẽ không thể kết nối tới S3 thông qua mạng internet. Trong bước tiếp theo chúng ta sẽ cấu hình tính năng S3 Gateway Endpoint để cho phép các EC2 instance có thể kết nối tới S3 bucket thông qua mạng nội bộ của VPC.\n"
+},
+{
+	"uri": "//localhost:1313/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/",
+	"title": "Tạo VPC Endpoint",
+	"tags": [],
+	"description": "",
+	"content": "Tạo VPC Endpoint SSM Chúng ta sẽ tạo 3 interface endpoint yêu cầu bởi Session Manager: Interface endpoint: com.amazonaws.region.ssm com.amazonaws.region.ec2messages com.amazonaws.region.ssmmessages Bạn có thể tham khảo thêm tại đây\nNội dung: Tạo Endpoint ssm Tạo Endpoint ssmmessages Tạo Endpoint ec2messages "
+},
+{
+	"uri": "//localhost:1313/vi/2-week2/",
+	"title": "WEEK 2",
+	"tags": [],
+	"description": "",
+	"content": "NOTE WEEK 2\n"
+},
+{
+	"uri": "//localhost:1313/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.3-connectec2/",
+	"title": "Kết nối EC2 Private",
+	"tags": [],
+	"description": "",
+	"content": "Gán IAM role và restart EC2 instance. Truy cập giao diện quản trị dịch vụ EC2\nClick chọn Private Windows Instance. Click Actions. Click Security. Click Modify IAM Role. Tại trang Modify IAM Role.\nTại mục IAM role, chọn SSM-Role. Click Update IAM role. Click chọn Private Windows Instance.\nClick Instance state. Click Reboot instance để thực hiện restart, sau đó click Reboot để xác nhận. Bạn hãy đợi 5 phút trước khi làm bước tiếp theo nhé.\nKết nối tới máy chủ private EC2 instance. Truy cập vào giao diện quản trị dịch vụ System Manager - Session Manager\nClick Start session. Click chọn Private Windows Instance.\nClick Start session. Gõ lệnh ipconfig để kiểm tra thông tin địa chỉ IP của Private Windows Instance như dưới đây. "
+},
+{
+	"uri": "//localhost:1313/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.3-endpointec2messages/",
+	"title": "Tạo Endpoint ec2messages",
+	"tags": [],
+	"description": "",
+	"content": "Tạo VPC Endpoint EC2MESSAGES Truy cập đến giao diện quản trị của dịch vụ VPC\nClick Endpoints. Click Create endpoint. Tại trang Create endpoint.\nTại mục Name tag điền EC2MESSAGES. Tại mục Service Category chọn AWS Services. Tại mục Services, Tại thanh Search nhập: .ec2messages, sau đó chọn Service Name: com.amazonaws.ap-southeast-1.ec2messages. Tại mục VPC, chọn Lab VPC. Chọn AZ đầu tiên, sau đó chọn subnet Lab Private Subnet. Tại mục Security Group, chọn Security group SG VPC Endpoint mà chúng ta đã tạo trước đó. Kéo chuột xuống dưới.\nTại mục Policy, chọn Full access Click Create endpoint. Chúng ta đã tạo xong VPC Interface Endpoint EC2MESSAGES.\n"
+},
+{
+	"uri": "//localhost:1313/vi/3-accessibilitytoinstances/",
+	"title": "Tạo kết nối đến máy chủ EC2",
+	"tags": [],
+	"description": "",
+	"content": "Trong bước này, chúng ta sẽ thực hiện tạo kết nối đến các máy chủ EC2 của chúng ta, nằm trong cả public và private subnet.\nNội dung 3.1. Tạo Kết nối đến máy chủ EC2 Public 3.2. Tạo Kết nối đến máy chủ EC2 Private\n"
+},
+{
+	"uri": "//localhost:1313/vi/4-s3log/4.3-creategwes3/",
+	"title": "Tạo S3 Gateway endpoint",
+	"tags": [],
+	"description": "",
+	"content": " Truy cập vào giao diện quản trị dịch vụ VPC\nClick Endpoints. Click Create endpoint. Tại trang Create endpoint.\nTại mục Name tag điền S3GW. Tại mục Service Category click chọn AWS services. Tại ô tìm kiếm điền S3, sau đó chọn com.amazonaws.[region].s3 có Type là Gateway. Tại mục VPC , chọn Lab VPC. Tại mục Route tables, chọn cả 2 route table. Kéo chuột xuống dưới cùng, click Create endpoint.\nBước tiếp theo chúng ta sẽ tiến hành cấu hình Session Manager để có thể lưu trữ các session logs tới S3 bucket chúng ta đã tạo.\n"
+},
+{
+	"uri": "//localhost:1313/vi/4-s3log/",
+	"title": "Quản lý session logs",
+	"tags": [],
+	"description": "",
+	"content": "Với Session Manager chúng ta có thể xem được lịch sử các kết nối tới các instance thông qua Session history. Tuy nhiên chúng ta chưa xem được chi tiết các câu lệnh được sử dụng.\nTrong phần này chúng ta sẽ tiến hành tạo S3 bucket và thực hiện cấu hình lưu trữ các session logs để xem được chi tiết các câu lệnh được sử dụng trong session.\nNội dung: Cập nhật IAM Role Tạo S3 Bucket Tạo S3 Gateway endpoint Cấu hình Session logs "
+},
+{
+	"uri": "//localhost:1313/vi/4-s3log/4.4-configsessionlogs/",
+	"title": "Theo dõi session logs",
+	"tags": [],
+	"description": "",
+	"content": "Theo dõi session logs Truy cập giao diện quản trị dịch vụ System Manager - Session Manager\nClick tab Preferences. Click Edit. Kéo chuột xuống phía dưới, tại mục S3 logging,\nClick chọn Enable cho Send session logs to S3. Chọn Allow only encrypted S3 buckets. Click chọn Choose a bucket name from the list. Chọn S3 bucket bạn đã tạo. Kéo chuột xuống phía dưới, click Save để lưu cấu hình.\nTruy cập giao diện quản trị dịch vụ System Manager - Session Manager\nClick Start session. Click chọn Private Windows Instance. Click Start session. Gõ lệnh ipconfig.\nGõ lệnh hostname. Click Terminate để thoát session, click Terminate 1 lần nữa để xác nhận. Kiểm tra Session logs trong S3 Truy cập vào giao diện quản trị dịch vụ S3\nClick vào tên S3 bucket chúng ta đã tạo cho bài lab. Click vào tên file sessions log Tại trang chi tiết objects , click Open. File logs sẽ được mở ở 1 tab mới trên trình duyệt.Bạn có thể xem các câu lệnh đã được lưu trữ lại trong session logs. "
+},
+{
+	"uri": "//localhost:1313/vi/5-portfwd/",
+	"title": "Port Forwarding",
+	"tags": [],
+	"description": "",
+	"content": " Port Forwarding là mốt cách thức hữu ích để chuyển hướng lưu lượng mạng từ 1 địa chỉ IP - Port này sang 1 địa chỉ IP - Port khác. Với Port Forwarding chúng ta có thể truy cập một EC2 instance nằm trong private subnet từ máy trạm của chúng ta.\nChúng ta sẽ cấu hình Port Forwarding cho kết nối RDP giữa máy của mình với Private Windows Instance nằm trong private subnet mà chúng ta đã tạo cho bài thực hành này.\nTạo IAM User có quyền kết nối SSM Truy cập vào giao diện quản trị dịch vụ IAM\nClick Users , sau đó click Add users. Tại trang Create user.\nTại mục User name, điền Portfwd. Click Next. Tại trang Set permission\nChọn Attach policies directly Tại thanh tìm kiếm, nhập ssm. Click AmazonSSMFullAccess. Click Next, click Next: Reviews. Click Create user. Tạo access key cho Portfwd user\nClick Create access key Chọn Command Line Interface(CLI) Check box confirmation Click Next Click Download.csv file Lưu lại thông tin Access key ID và Secret access key để thực hiện cấu hình AWS CLI. Cài đặt và cấu hình AWS CLI và Session Manager Plugin Để thực hiện phần thực hành này, đảm bảo máy trạm của bạn đã cài AWS CLI và Session Manager Plugin\nBạn có thể tham khảo thêm bài thực hành về cài đặt và cấu hình AWS CLI tại đây.\nVới Windows thì khi giải nén thư mục cài đặt Session Manager Plugin bạn hãy chạy file install.bat với quyền Administrator để thực hiện cài đặt.\nThực hiện Portforwarding Chạy command dưới đây trong Command Prompt trên máy của bạn để cấu hình Port Forwarding. aws ssm start-session --target (your ID windows instance) --document-name AWS-StartPortForwardingSession --parameters portNumber=\u0026#34;3389\u0026#34;,localPortNumber=\u0026#34;9999\u0026#34; --region (your region) Thông tin Instance ID của Windows Private Instance có thể tìm được khi bạn xem chi tiết máy chủ EC2 Windows Private Instance.\nCâu lệnh ví dụ\nC:\\Windows\\system32\u0026gt;aws ssm start-session --target i-06343d7377486760c --document-name AWS-StartPortForwardingSession --parameters portNumber=\u0026#34;3389\u0026#34;,localPortNumber=\u0026#34;9999\u0026#34; --region ap-southeast-1 Nếu câu lệnh của bạn báo lỗi như dưới đây : SessionManagerPlugin is not found. Please refer to SessionManager Documentation here: http://docs.aws.amazon.com/console/systems-manager/session-manager-plugin-not-found\nChứng tỏ bạn chưa cài Session Manager Plugin thành công. Bạn có thể cần khởi chạy lại Command Prompt sau khi cài Session Manager Plugin.\nKết nối tới Private Windows Instance bạn đã tạo bằng công cụ Remote Desktop trên máy trạm của bạn.\nTại mục Computer: điền localhost:9999. Quay trở lại giao diện quản trị của dịch vụ System Manager - Session Manager.\nClick tab Session history. Chúng ta sẽ thấy các session logs với tên Document là AWS-StartPortForwardingSession. Chúc mừng bạn đã hoàn tất bài thực hành hướng dẫn cách sử dụng Session Manager để kết nối cũng như lưu trữ các session logs trong S3 bucket. Hãy nhớ thực hiện bước dọn dẹp tài nguyên để tránh sinh chi phí ngoài ý muốn nhé.\n"
+},
+{
+	"uri": "//localhost:1313/vi/6-cleanup/",
+	"title": "Dọn dẹp tài nguyên  ",
+	"tags": [],
+	"description": "",
+	"content": "Chúng ta sẽ tiến hành các bước sau để xóa các tài nguyên chúng ta đã tạo trong bài thực hành này.\nXóa EC2 instance Truy cập giao diện quản trị dịch vụ EC2 Click Instances. Click chọn cả 2 instance Public Linux Instance và Private Windows Instance. Click Instance state. Click Terminate instance, Sau đó click Terminate để xác nhận. Truy cập giao diện quản trị dịch vụ IAM Click Roles. Tại ô tìm kiếm , điền SSM. Click chọn SSM-Role. Click Delete, Sau đó điền tên role SSM-Role và click Delete để xóa role. Click Users. Click chọn user Portfwd. Click Delete, sau đó điền tên user Portfwd và click Delete để xóa user. Xóa S3 bucket Truy cập giao diện quản trị dịch vụ System Manager - Session Manager. Click tab Preferences. Click Edit. Kéo chuột xuống dưới. Tại mục S3 logging. Bỏ chọn Enable để tắt tính năng logging. Kéo chuột xuống dưới. Click Save. Truy cập giao diện quản trị dịch vụ S3 Click chọn S3 bucket chúng ta đã tạo cho bài thực hành. ( Ví dụ : lab-fcj-bucket-0001 ) Click Empty. Điền permanently delete, sau đó click Empty để tiến hành xóa object trong bucket. Click Exit. Sau khi xóa hết object trong bucket, click Delete\nĐiền tên S3 bucket, sau đó click Delete bucket để tiến hành xóa S3 bucket.\nXóa các VPC Endpoint Truy cập vào giao diện quản trị dịch vụ VPC Click Endpoints. Chọn 4 endpoints chúng ta đã tạo cho bài thực hành bao gồm SSM, SSMMESSAGES, EC2MESSAGES, S3GW. Click Actions. Click Delete VPC endpoints. Tại ô confirm , điền delete. Click Delete để tiến hành xóa các endpoints. Click biểu tượng refresh, kiểm tra tất cả các endpoints đã bị xóa trước khi làm bước tiếp theo. Xóa VPC Truy cập vào giao diện quản trị dịch vụ VPC Click Your VPCs. Click chọn Lab VPC. Click Actions. Click Delete VPC. Tại ô confirm, điền delete để xác nhận, click Delete để thực hiện xóa Lab VPC và các tài nguyên liên quan. "
+},
+{
+	"uri": "//localhost:1313/vi/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "//localhost:1313/vi/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]
